@@ -1,8 +1,13 @@
 [Unit]
 Description=Digital Signage Daemon
+After=network.target
 
 [Service]
 ExecStart=/usr/bin/signaged
+Restart=always
+RestartSec=10s
+KillMode=process
+TimeoutSec=infinity
 
 [Install]
 WantedBy=multi-user.target
